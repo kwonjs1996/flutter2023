@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'Feed.dart';
+import 'feed.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -32,7 +32,14 @@ class HomePage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Feed(),
+      body:
+          // 성능최적화가 되어있다 미리 그려놓지 않고 스크롤을 내릴 때 맞춰서 로드한다.
+          ListView.builder(
+        itemBuilder: (context, index) {
+          return Feed();
+        },
+        itemCount: 10,
+      ),
     );
   }
 }
