@@ -4,14 +4,25 @@ import 'package:flutter/material.dart';
 class Feed extends StatefulWidget {
   const Feed({
     Key? key,
+    required this.imageUrl,
   }) : super(key: key);
-
+  final String imageUrl;
   @override
   State<Feed> createState() => _FeedState();
 }
 
 class _FeedState extends State<Feed> {
   bool isFavorite = false;
+
+  final List<String> images = [
+    "https://cdn2.thecatapi.com/images/bi.jpg",
+    "https://cdn2.thecatapi.com/images/63g.jpg",
+    "https://cdn2.thecatapi.com/images/a3h.jpg",
+    "https://cdn2.thecatapi.com/images/a9m.jpg",
+    "https://cdn2.thecatapi.com/images/aph.jpg",
+    "https://cdn2.thecatapi.com/images/1rd.jpg",
+    "https://cdn2.thecatapi.com/images/805.gif",
+  ];
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -19,7 +30,7 @@ class _FeedState extends State<Feed> {
       children: [
         // 이미지
         Image.network(
-          "https://cdn2.thecatapi.com/images/kat_7kqBi.png",
+          widget.imageUrl,
           height: 400,
           width: double.infinity,
           fit: BoxFit.cover,
