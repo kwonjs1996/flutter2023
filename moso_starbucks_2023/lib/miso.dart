@@ -178,7 +178,84 @@ class MisoThirdPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("Miso 세 번째 페이지"),
+        child: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              color: misoPrimaryColor,
+              child: Column(
+                children: [
+                  // 한줄텍스트에 다른 스타일 적용하고싶을 때
+                  Padding(
+                    padding: const EdgeInsets.only(top: 38),
+                    child: Text.rich(
+                      TextSpan(
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            backgroundColor: misoPrimaryColor,
+                            fontWeight: FontWeight.w300),
+                        children: [
+                          TextSpan(
+                            text: '친구 추천할 때마다\n',
+                          ),
+                          TextSpan(
+                            text: '10,000원 ',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                          TextSpan(text: '할인쿠폰 지급!'),
+                          // RichText(
+                          //     text: TextSpan(children: [
+                          //   TextSpan(text: 'Hello '),
+                          //   TextSpan(
+                          //       text: 'bold', style: TextStyle(fontWeight: FontWeight.bold)),
+                          //   TextSpan(text: ' world!'),
+                          // ]))
+                        ],
+                      ),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          '자세히 보기',
+                          style: TextStyle(color: Colors.white70),
+                        ),
+                        Icon(
+                          Icons.chevron_right,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Image.network(
+              '$backgroundImgUrl',
+              fit: BoxFit.fitHeight,
+            )
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {},
+        label: Text(
+          '친구 추천하기',
+          style:
+              TextStyle(color: misoPrimaryColor, fontWeight: FontWeight.bold),
+        ),
+        icon: Icon(
+          Icons.redeem,
+          color: misoPrimaryColor,
+        ),
+        backgroundColor: Colors.white,
       ),
     );
   }
