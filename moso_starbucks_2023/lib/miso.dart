@@ -120,10 +120,49 @@ class MisoSecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Miso 두 번째 페이지"),
+        body: Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 70.0),
+            child: Text(
+              '예약내역',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 38),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: TextField(
+              onChanged: (value) {},
+              decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.error,
+                    size: 20,
+                    color: misoPrimaryColor,
+                  ),
+                  hintText: "예약된 서비스가 아직 없어요. 지금 예약해보세요!",
+                  hintStyle: TextStyle(fontSize: 13)),
+            ),
+          ),
+          Spacer(),
+          Center(
+            child: TextButton(
+              style: TextButton.styleFrom(
+                minimumSize: Size(double.infinity, 50),
+                backgroundColor: misoPrimaryColor,
+              ),
+              onPressed: () {},
+              child: Text(
+                '예약하기',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
+        ],
       ),
-    );
+    ));
   }
 }
 
