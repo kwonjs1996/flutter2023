@@ -268,9 +268,81 @@ class MisoFourthPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Miso 네 번째 페이지"),
+        body: Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 60),
+            child: Column(
+              children: [
+                Text(
+                  '나의 정보',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
+                ),
+                Text('010-9999-9999'),
+              ],
+            ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              TextButton(
+                style: TextButton.styleFrom(primary: Colors.black),
+                onPressed: () {},
+                child: Row(
+                  children: [
+                    Icon(Icons.home),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Text('주소관리')
+                  ],
+                ),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(primary: Colors.black),
+                onPressed: () {},
+                child: Row(
+                  children: [
+                    Icon(Icons.credit_card),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Text('결제 수단 관리')
+                  ],
+                ),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(primary: Colors.black),
+                onPressed: () {},
+                child: Row(
+                  children: [
+                    Icon(Icons.campaign),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Text('공지사항')
+                  ],
+                ),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(primary: Colors.black),
+                onPressed: () {},
+                child: Row(
+                  children: [
+                    Icon(Icons.question_mark_rounded),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Text('문의사항')
+                  ],
+                ),
+              ),
+            ],
+          )
+        ],
       ),
-    );
+    ));
   }
 }
